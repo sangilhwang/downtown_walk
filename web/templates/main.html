@@ -3,9 +3,46 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            // Django 템플릿 태그를 사용하여 모델 필드를 JavaScript 변수에 할당합니다.
+            var labels = {{ labels|safe }};
+            var values1 = {{ values1|safe }};
+            var values2 = {{ values2|safe }};
+        </script>
         <title>Document</title>
     </head>
     <body>
-        <h1>Main</h1>
+        <div style="padding: 50px">
+            <canvas id="myChart" width="400" height="300"></canvas>
+        </div>
+        <script>
+            // import Chart from "chart.js/auto";
+            // import { getRelativePosition } from "chart.js/helpers";
+            const ctx = document.getElementById('myChart');
+            new Chart(ctx, {
+                data: {
+                    datasets: [{
+                        type: 'bar',
+                        label: '소형 1층 임대료',
+                        yAxisID: 'val1',
+                        data: values1,
+                    }, {
+                        type: 'line',
+                        label: '종사자수/자치구별인구',
+                        data: values2,
+                    }],
+                    labels: labels
+                },
+                options: {
+                    scales: {
+                        y: {
+                            position: 'right',
+                            beginAtZero: true,
+                        }
+                    }
+                }
+            });
+        </script>
     </body>
 </html>
