@@ -129,7 +129,7 @@
 .footer .credits {
    border-top: 1px solid #BBBBBB;
     margin-top: 85px;
-    padding: 20px 0 15px;
+    /* padding: ; */
     text-align: center;
     color: #EEE;
 }
