@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DownTown_Walk</title>
+
+        <!-- 메인페이지의 css 적용 -->
+        <link href="{% static 'css/main_page.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="main">
+            <!-- 메인페이지 백그라운드 video 설정 -->
+            <video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0"> 
+                <!-- 재생될 video source -->
+                <source src="{% static 'videos/seoul_video.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- background cover color 설정 -->
+            <div class="cover black" data-color="black"></div>
+
+            <!-- 타이틀 및 분석페이지 이동 설정 -->
+            <div class="container">
+                <h1 class="logo cursive">
+                    <a href="{% url 'analysis:analysis_page' %}">걸어서<br/>상권속으로</a>
+                </h1>
+            </div>
+
+            <!-- footer 설정 -->
+            <div class="footer">
+                Made by 데이터 짱구와 친구들 : 분석 대모험
+            </div>
+        </div>
+    </body>
+</html>
