@@ -18,3 +18,4 @@ def analysisplot(request):
         "values2" : values2,
         }
     return render(request, "analysis_page.html", context)
+

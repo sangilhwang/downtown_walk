@@ -1,0 +1,120 @@
+/* 메인페이지 font 참조 url */
+@import url('https://fonts.googleapis.com/earlyaccess/nanumpenscript.css');
+
+body{
+    
+}
+
+
+/* 메인페이지 커버 적용 */
+.cover{
+    position: fixed;
+    opacity: 1;
+    background-color: rgba(0,0,0,.1);
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.cover.black{
+    background-color: rgba(0,0,0,.1);
+}
+
+
+/* 메인페이지 텍스트 부분 */
+.main .logo{
+    color: #FFFFFF;
+    font-size: 56px;
+    font-weight: 300;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
+    margin-top: 100px;
+    z-index: 3;
+}
+.main .logo.cursive{
+    font-family: 'GangwonEdu_OTFBoldA',cursive;
+    font-size: 75px;
+    
+}
+
+
+/* 메인페이지 백그라운드 비디오 설정 부분 */
+#video_background {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+}
+@media (min-width:219px){        
+    .main .subscribe .form-group{
+        width: auto;
+    }   
+    .main .subscribe .form-inline .btn{
+        width: 100%;
+    }   
+}
+@media (min-width:768px){        
+    .main .subscribe .form-inline .btn{
+        width: auto;
+    }   
+}
+@media (min-width:991px){        
+    .main .subscribe .form-group{
+        width: 190px;
+    }   
+    .footer{
+        position: fixed;
+        bottom: 20px;
+    }
+}
+@media (min-width:1200px){        
+    .main .subscribe .form-group{
+        width: 250px;
+    }   
+}
+
+
+/* 메인페이지 footer 부분 */
+.footer{
+    font-family: 'Nanum Pen Script';
+    position: fixed;
+    bottom: 10;
+    width: 100%;
+    color: #AAAA;
+    z-index: 4;
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 10px;
+}
+
+
+/* 메인페이지 a 태그 글꼴 및 밑줄 설정 */
+a {
+    text-decoration: none;
+    color: rgba(0,0,0,.5);
+}
+a:link {
+color : rgba(0,0,0,.5);
+text-decoration: none;
+}
+a:visited {
+color : rgba(0,0,0,.5);
+text-decoration: none;
+}
+a:hover {
+color : rgba(0,0,0,.5);
+text-decoration: none;
+}
+a:active {
+color : rgba(0,0,0,.5);
+text-decoration: none;
+}

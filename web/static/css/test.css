@@ -1,0 +1,57 @@
+/*# sourceMappingURL=main.css.map*/
+
+.footer{
+  /* font-family: 'Nanum Pen Script'; */
+  position: relative;
+  width: 100%;
+  z-index: 4;
+  text-align: center;
+  font-size: 50px;
+  padding-bottom: 10px;
+}
+
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-left: 15px;
+  color: #4B5563;
+  border: none;
+  background-color: transparent;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.custom-button:hover {
+  color: #4C51BF;
+}
+
+/* 드롭다운 내용 스타일 */
+.dropdown-content {
+  display: none; /* 기본적으로 숨김 */
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content li {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-content li:hover {
+  background-color: #f3f4f6;
+}
