@@ -75,3 +75,8 @@ class SeoulIncomeData(models.Model):
 class DistrictAgeData(models.Model):
     district_id = models.ForeignKey(DistrictData, on_delete=models.CASCADE)
     district_age = models.FloatField()
+    
+class StarbucksData(models.Model):
+    district_id = models.ForeignKey(DistrictData, on_delete=models.CASCADE)
+    store_count = models.IntegerField()
+    store_ratio = models.FloatField()
