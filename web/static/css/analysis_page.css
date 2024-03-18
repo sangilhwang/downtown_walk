@@ -1643,10 +1643,12 @@ input:checked + .toggle-bg {
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
+  color: white;
+  /* color: rgb(107 114 128 / var(--tw-text-opacity)); */
 }
 .text-gray-600 {
   --tw-text-opacity: 1;
+
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 .text-gray-700 {
@@ -2678,6 +2680,7 @@ input:checked + .toggle-bg {
   text-align: center;
   font-size: 50px;
   padding-bottom: 10px;
+  color: white;
 }
 
 .tablesize{
