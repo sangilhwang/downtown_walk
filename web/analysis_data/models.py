@@ -1,14 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
-class EmpData(models.Model):
-    borough = models.CharField(max_length = 20)
-    mtolfirstfloor = models.FloatField()
-    smallfirstfloor = models.FloatField()
-    empdensity = models.FloatField()
-    emptopopul = models.FloatField()
-    
 class DistrictData(models.Model):
     district_name = models.CharField(max_length = 10)
     large_b1_rent = models.FloatField()
@@ -66,3 +58,17 @@ class SeoulPopData(models.Model):
     ratio_70s = models.FloatField()
     ratio_80s_to_90s = models.FloatField()
     ratio_total = models.FloatField()
+    
+class SeoulIncomeData(models.Model):
+     district_id = models.ForeignKey(DistrictData, on_delete=models.CASCADE)
+     district_income_per_person = models.IntegerField()
+     district_income_gu= models.IntegerField()
+     
+class DistrictAgeData(models.Model):
+    district_id = models.ForeignKey(DistrictData, on_delete=models.CASCADE)
+    district_age = models.FloatField()
+    
+class StarbucksData(models.Model):
+    district_id = models.ForeignKey(DistrictData, on_delete=models.CASCADE)
+    store_count = models.IntegerField()
+    store_ratio = models.FloatField()
