@@ -1,14 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
-class EmpData(models.Model):
-    borough = models.CharField(max_length = 20)
-    mtolfirstfloor = models.FloatField()
-    smallfirstfloor = models.FloatField()
-    empdensity = models.FloatField()
-    emptopopul = models.FloatField()
-    
 class DistrictData(models.Model):
     district_name = models.CharField(max_length = 10)
     large_b1_rent = models.FloatField()
