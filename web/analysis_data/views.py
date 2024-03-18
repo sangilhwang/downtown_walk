@@ -41,37 +41,36 @@ def analysisplot(request):
         # compare1의 비교데이터 유형 및 비교데이터
         if keyword1 == 'employee_density':
             labels2 = ["종사자밀도"]
-            compare1 = []
-            for i in district:
-                compare1.append(i.employeedata_set.all().values()[0][keyword1])
+            compare1 = [i.employeedata_set.all().values()[0][keyword1] for i in district]
         elif keyword1 == 'employee_ratio':
             labels2 = ["종사자/거주인구"]
-            compare1 = []
-            for i in district:
-                compare1.append(i.employeedata_set.all().values()[0][keyword1])
+            compare1 = [i.employeedata_set.all().values()[0][keyword1] for i in district]
         elif keyword1 == 'total_ratio':
             labels2 = ["유동인구/면적"]
-            compare1 = []
-            for i in district:
-                compare1.append(i.floatpopdata_set.all().values()[0][keyword1])
+            compare1 = [i.floatpopdata_set.all().values()[0][keyword1] for i in district]
+        elif keyword1 == 'store_ratio':
+            labels2 = ["스타벅스(매장수)/면적"]
+            compare1 = [i.starbucksdata_set.all().values()[0][keyword1] for i in district]
+        elif keyword1 == 'district_income_per_person':
+            labels2 = ["1인당 소득(단위 : 천)"]
+            compare1 = [i.seoulincomedata_set.all().values()[0][keyword1] for i in district]
+        elif keyword1 == 'district_income_gu':
+            labels2 = ["구별소득(단위 : 백만)"]
+            compare1 = [i.seoulincomedata_set.all().values()[0][keyword1] for i in district]
+        elif keyword1 == 'district_age':
+            labels2 = ["건물 연식"]
+            compare1 = [i.districtagedata_set.all().values()[0][keyword1] for i in district]
         elif keyword1 == 'ratio_30s':
             labels2 = ["30대 인구/면적"]
-            compare1 = []
-            for i in district:
-                compare1.append(i.seoulpopdata_set.all().values()[0][keyword1])
+            compare1 = [i.seoulpopdata_set.all().values()[0][keyword1] for i in district]
         elif keyword1 == 'ratio_40s':
             labels2 = ["40대 인구/면적"]
-            compare1 = []
-            for i in district:
-                compare1.append(i.seoulpopdata_set.all().values()[0][keyword1])
+            compare1 = [i.seoulpopdata_set.all().values()[0][keyword1] for i in district]
         else:
             labels2 = ["50대 인구/면적"]
-            compare1 = []
-            for i in district:
-                compare1.append(i.seoulpopdata_set.all().values()[0][keyword1])
+            compare1 = [i.seoulpopdata_set.all().values()[0][keyword1] for i in district]
 
     else:  # keyword가 주어지지 않아, None이 할당된 경우
-
         # 초기값으로 중대형 1층을 기준으로 정렬
         district = DistrictData.objects.all().order_by('large_1_rent')
 
@@ -80,9 +79,7 @@ def analysisplot(request):
         labels2 = ["종사자밀도"]
         xlabels = [item.district_name for item in district]
         values1 = [item.large_1_rent for item in district]
-        compare1 = []
-        for i in district:
-            compare1.append(i.employeedata_set.all().values()[0]['employee_density'])
+        compare1 = [i.employeedata_set.all().values()[0]['employee_density'] for i in district]
 
     context = {
         "labels1" : labels1,

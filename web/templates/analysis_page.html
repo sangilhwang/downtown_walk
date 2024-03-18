@@ -44,6 +44,7 @@
                                             type="button" data-bs-toggle="dropdown" style="padding-top: 10px; padding-left: 15px;">
                                             상가유형
                                         </button>
+                                        <!-- 선택하여 get방식으로 view에 keyword로 value 전달-->
                                         <select class="dropdown-menu" name="keyword" style="padding-left: 10px;">
                                             <li><option value="large_b1_rent">중대형 지하 1층</option></li>
                                             <li><option value="large_1_rent">중대형 1층</option></li>
@@ -62,17 +63,18 @@
                                             type="button" data-bs-toggle="dropdown" style="padding-top: 10px; padding-left: 15px;">
                                             비교 데이터
                                         </button>
+                                        <!-- 선택하여 get방식으로 view에 keyword1로 value 전달-->
                                         <select class="dropdown-menu" name="keyword1" style="padding-left: 10px;">
                                             <li><option value="employee_density">종사자밀도</option></li>
                                             <li><option value="employee_ratio">종사자/거주인구</option></li>
                                             <li><option value="total_ratio">유동인구/면적</option></li>
+                                            <li><option value="store_ratio">스타벅스(매장수)/면적</option></li>
+                                            <li><option value="district_income_per_person">1인당 소득(단위 : 천)</option></li>
+                                            <li><option value="district_income_gu">구별소득(단위 : 백만)</option></li>
+                                            <li><option value="district_age">건물 연식</option></li>
                                             <li><option value="ratio_30s">30대 인구/면적</option></li>
                                             <li><option value="ratio_40s">40대 인구/면적</option></li>
                                             <li><option value="ratio_50s">50대 인구/면적</option></li>
-                                            <!-- <li><option value="large_6to10_rent">중대형 6~10층</option></li>
-                                            <li><option value="small_b1_rent">소형 지하 1층</option></li>
-                                            <li><option value="small_1_rent">소형 1층</option></li>
-                                            <li><option value="small_2_rent">소형 2층</option></li> -->
                                         </select>
 
                                         <!-- 상가유형 그래프 선택 -->
@@ -80,6 +82,7 @@
                                             type="button" data-bs-toggle="dropdown" style="padding-top: 10px; padding-left: 15px;">
                                             상가유형 그래프 선택
                                         </button>
+                                        <!-- 선택으로 function을 이용하여 그래프 유형 변경 -->
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#" onclick="changeChartType1('bar')">Bar</a></li>
                                             <li><a class="dropdown-item" href="#" onclick="changeChartType1('line')">Line</a></li>
@@ -90,12 +93,13 @@
                                             type="button" data-bs-toggle="dropdown" style="padding-top: 10px; padding-left: 10px;">
                                             비교 데이터 그래프 선택
                                         </button>
+                                        <!-- 선택으로 function을 이용하여 그래프 유형 변경 -->
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#" onclick="changeChartType2('bar')">Bar</a></li>
                                             <li><a class="dropdown-item" href="#" onclick="changeChartType2('line')">Line</a></li>
                                         </ul>
 
-                                        <!-- 조회버튼 -->
+                                        <!-- 조회버튼 keyword, keyword1의 value를 view에 submit -->
                                         <button class="inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                         type="submit" style="padding-top: 10px; padding-left: 15px;">
                                         조회
@@ -108,8 +112,9 @@
                                     <canvas id="myChart"></canvas>
                                 </div>
                                 <script>
+                                    // 초기 그래프 유형
                                     let chartType1 = localStorage.getItem('selectedChartType1') || 'bar';
-                                    let chartType2 = localStorage.getItem('selectedChartType2') || 'bar';
+                                    let chartType2 = localStorage.getItem('selectedChartType2') || 'line';
                                     let chart;
                                     function updateChart() {
                                         const ctx = document.getElementById('myChart');
