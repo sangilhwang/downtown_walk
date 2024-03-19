@@ -23,7 +23,7 @@
     </head>
 
     <body style="background-image: url('/static/images/seoul.jpg'); background-size: cover;">
-        <nav class="navbar bg-light panel-gray" style="height: 60px;">
+        <nav class="navbar bg-light panel-gray" style="height: 60px; font-weight: bold;">
             <div class="container-fluid fnt-ty">
               <a class="navbar-brand" href="/" style="padding-left: 80px;">걸어서 상권속으로</a>
             </div>
@@ -36,13 +36,13 @@
                         <!-- 위젯(그래프) 위치 및 크기 설정 -->
                         <div class="justify-center" style="max-width: 65vw; margin: 0 auto;">
                             <div class="bg-white border rounded justify-center">
-                                <div class="flex items-center">
+                                <div class="flex items-center" style="padding-top: 20px;">
 
                                     <!-- 상가유형 선택 -->
                                     <form method="GET">
                                         <!-- 선택하여 get방식으로 view에 keyword로 value 전달-->
-                                        <select class="inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" name="keyword">
-                                            <li><option>상가유형</option></li>
+                                        <select class="inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" name="keyword" style="cursor: pointer;">
+                                            <li><option value="">상가유형</option></li>
                                             <li><option value="large_b1_rent">중대형 지하 1층</option></li>
                                             <li><option value="large_1_rent">중대형 1층</option></li>
                                             <li><option value="large_2_rent">중대형 2층</option></li>
@@ -57,8 +57,8 @@
 
                                         <!-- 상가유형과 비교할 데이터 선택 -->
                                         <!-- 선택하여 get방식으로 view에 keyword1로 value 전달-->
-                                        <select class="inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" name="keyword1">
-                                            <li><option>비교데이터</option></li>
+                                        <select class="inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" name="keyword1" style="cursor: pointer;">
+                                            <li><option value="">비교데이터</option></li>
                                             <li><option value="employee_density">종사자밀도</option></li>
                                             <li><option value="employee_ratio">종사자/거주인구</option></li>
                                             <li><option value="total_ratio">유동인구/면적</option></li>
@@ -72,15 +72,15 @@
                                         </select>
 
                                         <!-- 조회버튼 keyword, keyword1의 value를 view에 submit -->
-                                        <button class="btn-custom text-sm text-center" type="submit" style="padding-top: 10px; padding-left: 15px;">
+                                        <button class="custom-btn text-sm text-center" type="submit" style="padding: 0;">
                                         조회
                                         </button>
                                     </form>
 
-                                    <div style="padding-left: 100px;">
+                                    <div style="padding-left: 80px;">
                                         <!-- 상가유형 그래프 선택 -->
                                         <button class="dropdown-toggle inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                            type="button" data-bs-toggle="dropdown" style="padding-top: 10px; padding-left: 15px;">
+                                            type="button" data-bs-toggle="dropdown" style="padding-left: 15px;">
                                             상가유형 그래프 선택
                                         </button>
                                         <!-- 선택으로 function을 이용하여 그래프 유형 변경 -->
@@ -91,7 +91,7 @@
 
                                         <!-- 비교 데이터 그래프 선택 -->
                                         <button class="dropdown-toggle inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                            type="button" data-bs-toggle="dropdown" style="padding-top: 10px; padding-left: 10px;">
+                                            type="button" data-bs-toggle="dropdown" style="padding-left: 10px;">
                                             비교 데이터 그래프 선택
                                         </button>
                                         <!-- 선택으로 function을 이용하여 그래프 유형 변경 -->
