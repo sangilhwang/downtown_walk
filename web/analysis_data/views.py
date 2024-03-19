@@ -7,7 +7,7 @@ def analysisplot(request):
     keyword = request.GET.get("keyword", None)
     keyword1 = request.GET.get("keyword1", None)
 
-    if keyword: #keyword값이 주어진 경우
+    if keyword and keyword1: #keyword값이 주어진 경우
     # 선택으로 전달받은 키워드 값으로 정렬순서 및 value1 수정
         district = DistrictData.objects.all().order_by(keyword)
 
