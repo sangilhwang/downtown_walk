@@ -23,9 +23,9 @@
     </head>
 
     <body style="background-image: url('/static/images/seoul.jpg'); background-size: cover;">
-        <nav class="navbar bg-light panel-gray">
+        <nav class="navbar bg-light panel-gray" style="height: 60px;">
             <div class="container-fluid fnt-ty">
-              <a class="navbar-brand" href="/" style="padding-left: 30px;">걸어서 상권속으로</a>
+              <a class="navbar-brand" href="/" style="padding-left: 80px;">걸어서 상권속으로</a>
             </div>
         </nav>
         <div class="pt-16">
@@ -40,12 +40,9 @@
 
                                     <!-- 상가유형 선택 -->
                                     <form method="GET">
-                                        <button class="dropdown-toggle inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                            type="button" data-bs-toggle="dropdown" style="padding-top: 10px; padding-left: 15px;">
-                                            상가유형
-                                        </button>
                                         <!-- 선택하여 get방식으로 view에 keyword로 value 전달-->
-                                        <select class="dropdown-menu" name="keyword" style="padding-left: 10px;">
+                                        <select class="inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" name="keyword">
+                                            <li><option>상가유형</option></li>
                                             <li><option value="large_b1_rent">중대형 지하 1층</option></li>
                                             <li><option value="large_1_rent">중대형 1층</option></li>
                                             <li><option value="large_2_rent">중대형 2층</option></li>
@@ -59,12 +56,9 @@
                                         </select>
 
                                         <!-- 상가유형과 비교할 데이터 선택 -->
-                                        <button class="dropdown-toggle inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                            type="button" data-bs-toggle="dropdown" style="padding-top: 10px; padding-left: 15px;">
-                                            비교 데이터
-                                        </button>
                                         <!-- 선택하여 get방식으로 view에 keyword1로 value 전달-->
-                                        <select class="dropdown-menu" name="keyword1" style="padding-left: 10px;">
+                                        <select class="inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" name="keyword1">
+                                            <li><option>비교데이터</option></li>
                                             <li><option value="employee_density">종사자밀도</option></li>
                                             <li><option value="employee_ratio">종사자/거주인구</option></li>
                                             <li><option value="total_ratio">유동인구/면적</option></li>
@@ -77,6 +71,13 @@
                                             <li><option value="ratio_50s">50대 인구/면적</option></li>
                                         </select>
 
+                                        <!-- 조회버튼 keyword, keyword1의 value를 view에 submit -->
+                                        <button class="btn-custom text-sm text-center" type="submit" style="padding-top: 10px; padding-left: 15px;">
+                                        조회
+                                        </button>
+                                    </form>
+
+                                    <div style="padding-left: 100px;">
                                         <!-- 상가유형 그래프 선택 -->
                                         <button class="dropdown-toggle inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                                             type="button" data-bs-toggle="dropdown" style="padding-top: 10px; padding-left: 15px;">
@@ -98,13 +99,7 @@
                                             <li><a class="dropdown-item" href="#" onclick="changeChartType2('bar')">Bar</a></li>
                                             <li><a class="dropdown-item" href="#" onclick="changeChartType2('line')">Line</a></li>
                                         </ul>
-
-                                        <!-- 조회버튼 keyword, keyword1의 value를 view에 submit -->
-                                        <button class="inline-flex items-center text-sm font-medium text-center text-gray-500 rounded hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                                        type="submit" style="padding-top: 10px; padding-left: 15px;">
-                                        조회
-                                        </button>
-                                    </form>
+                                    </div>
                                 </div>
 
                                 <!-- 영역안에 분석 그래프 출력 -->
@@ -160,17 +155,6 @@
                                                         grid: {
                                                             color: 'transparent',
                                                         },
-                                                        // title: {
-                                                        //     display: true,
-                                                        //     text: labels2,
-                                                        //     color: "black",
-                                                        //     font: {
-                                                        //         family: 'Times',
-                                                        //         size: 20,
-                                                        //         style: 'normal',
-                                                        //         lineHeight: 1.2
-                                                        //     }
-                                                        // }
                                                     }
                                                 }
                                             },
@@ -200,7 +184,7 @@
         </div>
         
         <div class="footer">
-            <p class="my-1 text-sm text-center text-gray-500" style="color: white; font-size: large;">
+            <p class="my-1 text-sm text-center text-gray-500" style="color: white; font-size: x-large;">
                 Made by 데이터 짱구와 친구들 : 분석 대모험
             </p>
         </div>
