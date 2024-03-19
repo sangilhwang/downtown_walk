@@ -25,8 +25,8 @@
     <body style="background-image: url('/static/images/seoul5.png'); background-size: cover;">
         <nav class="navbar bg-light panel-gray" style="height: 60px; font-weight: bold;">
             <div class="container-fluid fnt-ty">
-              <a class="navbar-brand" href="/" style="padding-left: 80px;">걸어서 상권속으로</a>
-              <a style="text-align: center; padding-right: 50px;">Made by 데이터 짱구와 친구들 : 분석 대모험</a>
+              <a class="navbar-brand" href="/" style="font-size: 25px; padding-left: 80px;">걸어서 상권속으로</a>
+              <a class="navbar-brand" href="{% url 'analysis:easteregg_page' %}" style="font-size: 18px; text-align: center; padding-right: 50px;">Made by 데이터 짱구와 친구들 : 분석 대모험</a>
             </div>
             
         </nav>
@@ -36,7 +36,7 @@
                     <div class="pt-16">
 
                         <!-- 위젯(그래프) 위치 및 크기 설정 -->
-                        <div class="justify-center" style="max-width: 65vw; margin: 0 auto; opacity : 0.95; padding-top: 30px;">
+                        <div class="justify-center" style="max-width: 65vw; margin: 0 auto; opacity : 0.9; padding-top: 30px;">
                             <div class="bg-white border rounded justify-center">
                                 <div class="flex items-center" style="padding-top: 20px;">
 
@@ -148,6 +148,9 @@
                                                                 family: 'Times',
                                                                 size: 20,
                                                             }
+                                                        },
+                                                        ticks: {
+                                                            minRotation: 1,
                                                         }
                                                     },
                                                     y: {

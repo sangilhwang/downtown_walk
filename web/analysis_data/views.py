@@ -89,3 +89,6 @@ def analysisplot(request):
         "compare1" : compare1,
         }
     return render(request, "analysis_page.html", context)
+
+def easteregg(request):
+    return render(request, "easteregg_page.html")
